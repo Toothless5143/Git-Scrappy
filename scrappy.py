@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 import time
 
 # Set the path to your chromedriver
-cdp = "/Users/ryan/Desktop/developer/chromedriver"
+cdp = "./chromedriver" # Change it according to your own needs
 driver = webdriver.Chrome(executable_path=cdp)
 
 # Prompt the user to enter the username
