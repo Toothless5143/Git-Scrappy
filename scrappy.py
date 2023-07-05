@@ -1,29 +1,25 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-# Set up Chrome options
-chrome_options = webdriver.ChromeOptions()
-chrome_options.add_argument("--headless")  # Run Chrome in headless mode, without a GUI
+# Set the path to your chromedriver
+cdp = "cdp = ".wdm/drivers/chromedriver"
+driver = webdriver.Chrome(executable_path=cdp)
 
-# Initialize Chrome driver
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
-
-# Prompt the user to enter the GitHub username
+# Prompt the user to enter the username
 username = input("Enter the GitHub username: ")
 
 url = f"https://github.com/{username}"
 driver.get(url)
 
 # Wait for the page to load (optional)
-time.sleep(2)
+# time.sleep(2)
 
 # Find all elements with class name "repo"
 repos = driver.find_elements(By.CLASS_NAME, "repo")
 
 # Wait for the elements to load (optional)
-time.sleep(2)
+# time.sleep(2)
 
 links = []
 
