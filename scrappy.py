@@ -1,40 +1,40 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-import time
+from playwright.sync_api import sync_playwright
 
-# Set the path to your chromedriver
-cdp = "cdp = ".wdm/drivers/chromedriver"
-driver = webdriver.Chrome(executable_path=cdp)
+with sync_playwright() as playwright:
+    browser = playwright.chromium.launch()
+    page = browser.new_page()
 
-# Prompt the user to enter the username
-username = input("Enter the GitHub username: ")
+    # Prompt the user to enter the username
+    username = input("Enter the GitHub username: ")
 
-url = f"https://github.com/{username}"
-driver.get(url)
+    url = f"https://github.com/{username}"
+    page.goto(url)
 
-# Wait for the page to load (optional)
-# time.sleep(2)
+    # Wait for the page to load (optional)
+    # page.wait_for_load_state('networkidle')
 
-# Find all elements with class name "repo"
-repos = driver.find_elements(By.CLASS_NAME, "repo")
+    # Find all elements with class name "repo"
+    repos = page.query_selector_all('.repo')
 
-# Wait for the elements to load (optional)
-# time.sleep(2)
+    # Wait for the elements to load (optional)
+    # page.wait_for_load_state('networkidle')
 
-links = []
+    links = []
 
-def get_raw(second_page):
-    driver.get(second_page)
-    raw = driver.find_element(By.CLASS_NAME, "js-permalink-replaceable-link")
-    raw.click()
-    html = driver.page_source
-    html = f"{html}"
-    if "password" in html:
-        print(f"Found password on {second_page}")
+    def get_raw(second_page):
+        page.goto(second_page)
+        raw = page.query_selector('.js-permalink-replaceable-link')
+        raw.click()
+        html = page.content()
+        html = f"{html}"
+        if "password" in html:
+            print(f"Found password on {second_page}")
 
-def loop(next_page):
-    global links
-    # Do something with the next page
-    links.append(next_page)
+    def loop(next_page):
+        global links
+        # Do something with the next page
+        links.append(next_page)
 
-# Call the functions or perform the desired actions here
+    # Call the functions or perform the desired actions here
+
+    browser.close()
