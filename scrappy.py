@@ -3,7 +3,12 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+# Set up Chrome options
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--headless")  # Run Chrome in headless mode, without a GUI
+
+# Initialize Chrome driver
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
 # Prompt the user to enter the GitHub username
 username = input("Enter the GitHub username: ")
