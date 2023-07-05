@@ -11,17 +11,19 @@ username = input("Enter the GitHub username: ")
 
 url = f"https://github.com/{username}"
 driver.get(url)
+repo = f"https://github.com/{username}"
 
 # Wait for the page to load (optional)
 # time.sleep(2)
 
-# Find all elements with class name "repo"
-repos = driver.find_elements(By.CLASS_NAME, "repo")
+# Find all elements
+res = driver.find_elements(By.CLASS_NAME, "repo")
 
 # Wait for the elements to load (optional)
 # time.sleep(2)
 
 links = []
+flink = []
 
 def get_raw(second_page):
     driver.get(second_page)
@@ -33,8 +35,4 @@ def get_raw(second_page):
         print(f"Found password on {second_page}")
 
 def loop(next_page):
-    global links
-    # Do something with the next page
-    links.append(next_page)
-
-# Call the functions or perform the desired actions here
+    global a
