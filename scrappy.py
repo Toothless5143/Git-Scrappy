@@ -1,25 +1,25 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 
-# Set the path to your chromedriver
-cdp = "./chromedriver"
-driver = webdriver.Chrome(executable_path=cdp)
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 
-# Prompt the user to enter the username
+# Prompt the user to enter the GitHub username
 username = input("Enter the GitHub username: ")
 
 url = f"https://github.com/{username}"
 driver.get(url)
 
 # Wait for the page to load (optional)
-# time.sleep(2)
+time.sleep(2)
 
 # Find all elements with class name "repo"
 repos = driver.find_elements(By.CLASS_NAME, "repo")
 
 # Wait for the elements to load (optional)
-# time.sleep(2)
+time.sleep(2)
 
 links = []
 
