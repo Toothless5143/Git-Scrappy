@@ -45,5 +45,16 @@ To run the GitHub Repository Scanner, follow these steps:
 5. The tool will start scanning the user's repositories, displaying progress and any matches found.
 6. Review the results, which include the file names, line numbers, and matched patterns.
 
+### Usage in Information Disclosure:
+
+The GitHub Repository Scanner can be a valuable tool in identifying sensitive information disclosure during security assessments, enumeration, or bug bounty hunting. Here's how it can be utilized:
+
+- Information Disclosure: By scanning GitHub repositories, the tool helps identify potential instances of sensitive information, such as usernames and passwords, being inadvertently exposed in source code or configuration files. This can assist security professionals in identifying and mitigating information disclosure risks before they are exploited.
+
+- Enumeration: During enumeration, the scanner can be used to gather intelligence about an organization or individual by searching for sensitive information in public GitHub repositories. It can help identify potential weak points, misconfigurations, or developmental artifacts that may reveal sensitive data, allowing for targeted testing and assessment.
+
+- Bug Bounty Hunting: The GitHub Repository Scanner can be a valuable asset for bug bounty hunters. It can aid in the discovery of vulnerabilities by identifying instances where sensitive information, such as credentials or API keys, may have been inadvertently exposed. By proactively identifying such issues, bug bounty hunters can report them to the relevant organizations, potentially earning rewards and contributing to improved security.
+
+
 ### License
 This tool is open source and available under the [MIT License.](/LICENSE)
