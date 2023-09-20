@@ -17,7 +17,7 @@ To use the GitHub Repository Scanner, follow these installation steps:
 1. Ensure that Python 3 is installed on your system.
 2. Download the repository by running the following command:
    ```
-   git clone https://github.com/Toothless5143/Git-Scrappy.git && cd Git-Scrappy
+   git clone https://github.com/Toothless5143/Git-Scrapy.git && cd Git-Scrapy
    ```
 3. Install the required modules by running the following command:
 
@@ -38,7 +38,7 @@ To run the GitHub Repository Scanner, follow these steps:
 3. Run the following command:
 
    ```
-   python scanny.py
+   python scrapy.py
    ```
 
 4. Enter the GitHub username you want to scan when prompted.
