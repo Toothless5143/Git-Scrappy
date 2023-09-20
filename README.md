@@ -53,7 +53,7 @@ The GitHub Repository Scanner can be a valuable tool in identifying sensitive in
 
 - Enumeration: During enumeration, the scanner can be used to gather intelligence about an organization or individual by searching for sensitive information in public GitHub repositories. It can help identify potential weak points, misconfigurations, or developmental artifacts that may reveal sensitive data, allowing for targeted testing and assessment.
 
-- Bug Bounty Hunting: The GitHub Repository Scanner can be a valuable asset for bug bounty hunters. It can aid in the discovery of vulnerabilities by identifying instances where sensitive information, such as credentials or API keys, may have been inadvertently exposed. By proactively identifying such issues, bug bounty hunters can report them to the relevant organizations, potentially earning rewards and contributing to improved security.
+- Bug Bounty Hunting: The GitHub Repository Scanner can be a valuable asset for bug bounty hunters. It can aid in the discovery of vulnerabilities by identifying instances where sensitive information, such as credentials, may have been inadvertently exposed. By proactively identifying such issues, bug bounty hunters can report them to the relevant organizations, potentially earning rewards and contributing to improved security.
 
 
 ### License
