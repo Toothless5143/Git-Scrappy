@@ -1,16 +1,46 @@
-# This tool is broken, will be fixed soon.
+# GitHub Repository Scanner
 
-## Git-Scrappy
-~This tool is written in python to scrape passwords from a provided github username. You can use this tool for bug hunting or during pentesting. This tool will simply visit the provided github user profile and scan all the repositories for credentials.~
+The GitHub Repository Scanner is a command-line tool designed to scan a user's GitHub repositories for files containing potential usernames and passwords. It utilizes the GitHub API, regular expressions, and the `requests` module to fetch repository and file information, search for specified patterns, and provide detailed results.
 
-### Installation
-~First you need to install the library using pip, we're using a specific version here.<br>
-`pip install selenium`~
+### Features:
 
-~Then you need to have chrome installed on your machine and you need to download the [chrome driver](https://chromedriver.chromium.org/downloads), and change the cdp variable to the path of the driver in the src code.~
+- Fetches repositories of a specified GitHub user.
+- Retrieves the contents of each repository.
+- Searches for files within the repositories.
+- Scans file contents for potential usernames and passwords.
+- Prints detailed information about the files and matched patterns.
 
-~Then you need to run the code and provide the username.<br>
-`python3 scrappy.py`~
+### Installation:
+
+To use the GitHub Repository Scanner, follow these installation steps:
+
+1. Ensure that Python 3 is installed on your system.
+2. Open a command-line interface.
+3. Install the required modules by running the following command:
+
+   ```
+   pip install requests
+   ```
+
+   This command installs the `requests` module, which is used for making HTTP requests.
+
+4. The `re` module is a built-in Python module, so no additional installation is needed.
+
+### Usage:
+
+To run the GitHub Repository Scanner, follow these steps:
+
+1. Open a command-line interface.
+2. Navigate to the directory where the script is located.
+3. Run the following command:
+
+   ```
+   python scanner.py
+   ```
+
+4. Enter the GitHub username you want to scan when prompted.
+5. The tool will start scanning the user's repositories, displaying progress and any matches found.
+6. Review the results, which include the file names, line numbers, and matched patterns.
 
 ### License
 This tool is open source and available under the [MIT License.](/LICENSE)
